@@ -1,0 +1,88 @@
+.container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+}
+
+.game-area {
+    position: relative;
+    height: 500px;
+    border: 1px solid #ccc;
+}
+
+.pet-area {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.furniture-area {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.furniture {
+    position: absolute;
+    /* 為每個家具設置合適的位置 */
+}
+
+.left-buttons, .right-buttons {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-100%);
+    display: flex;
+    flex-direction: column;
+}
+
+.left-buttons {
+    left: 20px;
+}
+
+.right-buttons {
+    right: 20px;
+}
+
+.bottom-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    transform: translateY(-150%);
+}
+
+.btn {
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #e0e0e0;
+}
+
+.bottom-buttons > .shop {
+/*   padding: 10px 0px; */
+/*   margin:0px 120px 0px 0px; */
+font-size:25px;
+transform: translateX(-125%);
+}
+.talent {
+/*   margin:0px 0px 0px 120px; */
+font-size:25px;
+transform: translateX(125%);
+}
+.left-buttons > .friend {
+/*   background-color:blue; */
+transform:translateY(-100%);
+padding:20px;
+}
