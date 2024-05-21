@@ -1,6 +1,6 @@
 .container {
-    width: 100%;
-    max-width: 800px;
+    width: 80%;
+    height: 70%;
     margin: 0 auto;
     text-align: center;
     position: relative;
@@ -9,29 +9,107 @@
 .game-area {
     position: relative;
     height: 500px;
-    border: 1px solid #ccc;
+    width: 100%;
+    background-color:#c7e8f3;
 }
 
 .pet-area {
     position: absolute;
-    top: 50%;
-    left: 50%;
+    height: 50%;
+    width: 100%;
+    transform: translate(0%, 100%);
+    border: 1px solid red;
+}
+.game-area > .pet-area > img {
+    position: absolute;
+    height: 100px;
+    /* top: 50%;
+    left: 50%; */
+    border: 1px solid blue;
     transform: translate(-50%, -50%);
+}
+.game-area::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%; /* 可根據需要調整高度比例 */
+    background-color: #f0e5d5;
+}
+
+.game-area::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: -10px;
+    width: 250px; /* 可根據需要調整植物圖片的寬度 */
+    height: 200px; /* 可根據需要調整植物圖片的高度 */
+    background-image: url("/images/fern.png"); /* 替換為左下角植物圖片的路徑 */
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
 .furniture-area {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    position: relative;
+    width: 100%;
+    height: inherit;
+    /* height: 500px; 可根據需要調整高度 */
+    /* background-color: #ccc; */
 }
 
 .furniture {
     position: absolute;
-    /* 為每個家具設置合適的位置 */
+    height: 10vh;
 }
 
+.furniture:nth-child(2) {
+    height: 15vh;
+    top: 40%;
+    left: 20%;
+    border: blue 1px solid;
+}
+
+.furniture:nth-child(3) {
+    top: 45%;
+    left: 10%;
+    border: blue 1px solid;
+}
+
+.furniture:nth-child(4) {
+    top: 70%;
+    left: 20%;
+    border: blue 1px solid;
+}
+
+.furniture:nth-child(5) {
+    top: 45%;
+    left: 30%;
+    border: blue 1px solid;
+}
+
+.furniture:nth-child(6) {
+    height: 20vh;
+    top: 40%;
+    right: 15%;
+    border: blue 1px solid;
+}
+
+.furniture:nth-child(7) {
+    height: 20vh;
+    top: 40%;
+    right: 30%;
+    border: blue 1px solid;
+}
+
+.furniture:nth-child(1) {
+    /* width: 15vw; */
+    height: 25vh;
+    top: 10%;
+    right: 30%;
+    border: blue 1px solid;
+}
+/* 根據需要為每個家具設置不同的位置 */
 .left-buttons, .right-buttons {
     position: absolute;
     top: 50%;
@@ -71,18 +149,18 @@
 }
 
 .bottom-buttons > .shop {
-/*   padding: 10px 0px; */
-/*   margin:0px 120px 0px 0px; */
-font-size:25px;
-transform: translateX(-125%);
+    /*   padding: 10px 0px; */
+    /*   margin:0px 120px 0px 0px; */
+    font-size:25px;
+    transform: translateX(-125%);
 }
 .talent {
-/*   margin:0px 0px 0px 120px; */
-font-size:25px;
-transform: translateX(125%);
+    /*   margin:0px 0px 0px 120px; */
+    font-size:25px;
+    transform: translateX(125%);
 }
 .left-buttons > .friend {
-/*   background-color:blue; */
-transform:translateY(-100%);
-padding:20px;
+    /*   background-color:blue; */
+    transform:translateY(-100%);
+    padding:20px;
 }
