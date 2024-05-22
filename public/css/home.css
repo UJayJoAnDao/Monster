@@ -1,14 +1,24 @@
 .container {
     width: 80%;
-    height: 70%;
-    margin: 0 auto;
+    height: 90%;
+    margin: auto;
     text-align: center;
     position: relative;
-}
+    display: flex;
+    flex-direction: column;
+    /* background-color: aqua; */
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
 
 .game-area {
     position: relative;
-    height: 500px;
+    height: 100%;
     width: 100%;
     background-color:#c7e8f3;
 }
@@ -53,60 +63,62 @@
 .furniture-area {
     position: relative;
     width: 100%;
-    height: inherit;
+    height: 0vh;
     /* height: 500px; 可根據需要調整高度 */
     /* background-color: #ccc; */
+    transform: translateY(0);
+    border: 1px solid yellow;
 }
 
 .furniture {
-    position: absolute;
+    position: relative;
     height: 10vh;
+    cursor: pointer;
+}
+.furniture:hover{
+    background-color: red;
+    cursor: pointer;
 }
 
 .furniture:nth-child(2) {
     height: 15vh;
-    top: 40%;
-    left: 20%;
+    transform: translate(-100%, 100%);
     border: blue 1px solid;
 }
 
 .furniture:nth-child(3) {
-    top: 45%;
-    left: 10%;
+    transform: translate(-100%,150%);
     border: blue 1px solid;
 }
 
 .furniture:nth-child(4) {
-    top: 70%;
-    left: 20%;
+    transform: translate(-400%,300%);
     border: blue 1px solid;
 }
 
 .furniture:nth-child(5) {
-    top: 45%;
-    left: 30%;
+    transform: translate(-650%,150%);
     border: blue 1px solid;
 }
 
 .furniture:nth-child(6) {
     height: 20vh;
-    top: 40%;
-    right: 15%;
+    transform: translate(100%, 150%);
     border: blue 1px solid;
+    /* 圖層往上 */
+    z-index: 1;
 }
 
 .furniture:nth-child(7) {
     height: 20vh;
-    top: 40%;
-    right: 30%;
+    transform: translate(-75%,100%);
     border: blue 1px solid;
 }
 
 .furniture:nth-child(1) {
     /* width: 15vw; */
     height: 25vh;
-    top: 10%;
-    right: 30%;
+    transform: translate(300%, 25%);
     border: blue 1px solid;
 }
 /* 根據需要為每個家具設置不同的位置 */
@@ -163,4 +175,38 @@
     /*   background-color:blue; */
     transform:translateY(-100%);
     padding:20px;
+}
+.hint-list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 30%;
+    top: 50%;
+    left: calc(50% - (30% / 2));
+    transform: translate(0%, -50%);
+    background-color: rgba(255, 255, 255, 0.9);
+    visibility: hidden;
+    pointer-events: none;
+    /* 過3秒才隱藏 */
+    transition: visibility 0s 3s;
+}
+
+.hint {
+    display: flex;
+    /* visibility: hidden; */
+}
+.hint span,
+.hint button {
+  display: inline-block;
+  margin-right: 10px;
+}
+.furniture:hover + .hint-list,
+.furniture:hover ~ .hint-list {
+  visibility: visible;
+  top: 50%;
+  left: calc(50% - (30% / 2));;
+  transform: translate(0%, -50%);
+  transition-delay: 0s;
+  /* transition: top 0.3s ease, left 0.3s ease; */
 }
