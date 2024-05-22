@@ -82,22 +82,22 @@
 
 .furniture:nth-child(2) {
     height: 15vh;
-    transform: translate(-100%, 100%);
+    transform: translate(-100%, 150%);
     border: blue 1px solid;
 }
 
 .furniture:nth-child(3) {
-    transform: translate(-100%,150%);
+    transform: translate(-100%,200%);
     border: blue 1px solid;
 }
 
 .furniture:nth-child(4) {
-    transform: translate(-400%,300%);
+    transform: translate(-400%,350%);
     border: blue 1px solid;
 }
 
 .furniture:nth-child(5) {
-    transform: translate(-650%,150%);
+    transform: translate(-650%,200%);
     border: blue 1px solid;
 }
 
@@ -140,9 +140,12 @@
 
 .bottom-buttons {
     display: flex;
+    position: absolute;
     justify-content: center;
-    margin-top: 20px;
-    transform: translateY(-150%);
+    width: 100%;
+    top: 80%;
+    border: #f0e5d5 1px solid;
+    margin: 0px;
 }
 
 .btn {
@@ -209,4 +212,19 @@
   transform: translate(0%, -50%);
   transition-delay: 0s;
   /* transition: top 0.3s ease, left 0.3s ease; */
+}
+
+.page {
+    visibility: hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: aquamarine;
+    /* padding: 0; */
+    width: 70%;
+    height: 60%;
+    border-radius: 8px;
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); */
+    z-index: 9999;
 }
