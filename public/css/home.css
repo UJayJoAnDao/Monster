@@ -67,75 +67,68 @@
     /* height: 500px; 可根據需要調整高度 */
     /* background-color: #ccc; */
     transform: translateY(0);
-    border: 1px solid yellow;
+    /* border: 1px solid yellow; */
 }
 
 .furniture {
     position: relative;
     height: 10vh;
     cursor: pointer;
-}
-.furniture:hover{
-    background-color: red;
-    cursor: pointer;
+    border: blue 1px solid;
 }
 
 .furniture:nth-child(2) {
     height: 15vh;
-    transform: translate(-100%, 150%);
-    border: blue 1px solid;
+    transform: translate(-100%, 160%);
 }
 
 .furniture:nth-child(3) {
-    transform: translate(-100%,200%);
-    border: blue 1px solid;
+    transform: translate(-100%,250%);
 }
 
 .furniture:nth-child(4) {
-    transform: translate(-400%,350%);
-    border: blue 1px solid;
+    transform: translate(-400%,360%);
 }
 
 .furniture:nth-child(5) {
-    transform: translate(-650%,200%);
-    border: blue 1px solid;
+    transform: translate(-650%,250%);
 }
 
 .furniture:nth-child(6) {
     height: 20vh;
-    transform: translate(100%, 150%);
-    border: blue 1px solid;
+    transform: translate(100%, 160%);
     /* 圖層往上 */
     z-index: 1;
 }
 
 .furniture:nth-child(7) {
     height: 20vh;
-    transform: translate(-75%,100%);
-    border: blue 1px solid;
+    transform: translate(-75%,110%);
 }
 
 .furniture:nth-child(1) {
     /* width: 15vw; */
     height: 25vh;
     transform: translate(300%, 25%);
-    border: blue 1px solid;
 }
 /* 根據需要為每個家具設置不同的位置 */
 .left-buttons, .right-buttons {
     position: absolute;
-    top: 50%;
-    transform: translateY(-100%);
+    /* border: black 1px solid; */
     display: flex;
     flex-direction: column;
 }
 
 .left-buttons {
-    left: 20px;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .right-buttons {
-    right: 20px;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .bottom-buttons {
@@ -144,7 +137,7 @@
     justify-content: center;
     width: 100%;
     top: 80%;
-    border: #f0e5d5 1px solid;
+    /* border: #ff9900 1px solid; */
     margin: 0px;
 }
 
@@ -155,36 +148,60 @@
     cursor: pointer;
     border: none;
     background-color: #f0f0f0;
-    border-radius: 5px;
+    border-radius: 10%;
     transition: background-color 0.3s;
+    display: flex;
+    padding:0px 0px 0px 5px;
+    height: 6.5vh;
+    border: black 2px solid;
 }
 
 .btn:hover {
     background-color: #e0e0e0;
+    /* .btn img會旋轉 */
+    transform: scale(1.1);
+    transition: transform 0.3s;
 }
 
-.btn > img {
-    border: red 1px solid;
-    width: 25px;
-    /* margin: 0px 5px; */
+.btn img {
+    border: black 2px solid;
+    /* background-color: burlywood; */
+    background-color: #f0f0f0;
+    border-radius: 50%;
+    padding: 0px 5px;
+    height: 100%;
+    margin: 0px 5px;
+    transition: transform 0.3s ease;
 }
-
-.bottom-buttons > .shop {
-    /*   padding: 10px 0px; */
-    /*   margin:0px 120px 0px 0px; */
-    font-size:25px;
-    transform: translateX(-125%);
+.btn > span, .btn > img {
+    transform: translate(50%, 0%);
+    /* border: red 1px solid; */
+    margin: auto;
 }
-.talent {
-    /*   margin:0px 0px 0px 120px; */
-    font-size:25px;
-    transform: translateX(125%);
+.bottom-buttons > .btn {
+    margin: 0px 1.5vw;
 }
-.left-buttons > .friend {
+.right-buttons > .btn {
+    margin: 1.5vh 0px;
+}
+.left-buttons > .btn {
+    margin: 1.5vh 0px;
+}
+.right-buttons > .btn > img {
+    transform: translate(-125%, 0%);
+}
+.right-buttons > .btn > span {
+    transform: translate(100%, 0%);
+}
+.friend {
     /*   background-color:blue; */
-    transform:translateY(-100%);
-    padding:20px;
+    /* transform:translateY(-100%); */
+    display: flex;
+    /* flex-direction: column; */
+    
+    
 }
+
 .hint-list{
     display: flex;
     justify-content: center;
