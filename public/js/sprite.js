@@ -48,19 +48,20 @@ function showSpiritInfo(event) {
     var experience = event.target.dataset.experience;
     var info = event.target.dataset.info;
 
-    // 獲取模態視窗元素
-    var modal = document.getElementById("spiritInfoModal");
+    // // 獲取模態視窗元素
+    // var modal = document.getElementById("spiritInfoModal");
 
-    // 更新模態視窗內容
-    modal.querySelector(".modal-title").textContent = "精靈資訊";
-    modal.querySelector(".modal-body").innerHTML = `
-        <p>精靈名稱：${spiritName}</p>
-        <p>經驗值：${experience}</p>
-        <p>資訊：${info}</p>
-    `;
+    // // 更新模態視窗內容
+    // modal.querySelector(".modal-title").textContent = "精靈資訊";
+    // modal.querySelector(".modal-body").innerHTML = `
+    //     <p>精靈名稱：${spiritName}</p>
+    //     <p>經驗值：${experience}</p>
+    //     <p>資訊：${info}</p>
+    // `;
 
-    // 顯示模態視窗
-    $('#spiritInfoModal').modal('show');
+    // // 顯示模態視窗
+    // $('#spiritInfoModal').modal('show');
+    alert('精靈名稱：' + spiritName + '經驗值' + experience + '資訊' + info)
 }
 
 // 在每個精靈圖片上添加點擊事件監聽器
