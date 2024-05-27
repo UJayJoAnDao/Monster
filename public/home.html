@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/sprite.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container">
+    <div class="game-area">
+      <div class="pet-area">
+        <!-- 精靈的位置 -->
+        <img src="images/kappa.png" alt="Pet" class="pet">
+      </div>
+      <div class="furniture-area">
+        <!-- 家具的位置 -->
+        <img src="images/window.png" alt="Furniture 7" class="furniture BG">
+        <img src="images/furniture.png" alt="Furniture 1" class="furniture">
+        <img src="images/nintendo-switch.png" alt="Furniture 2" class="furniture">
+        <img src="images/racing-car.png" alt="Furniture 3" class="furniture">
+        <img src="images/sport.png" alt="Furniture 4" class="furniture">
+        <img src="images/bath-tub.png" alt="Furniture 5" class="furniture">
+        <img src="images/workspace.png" alt="Furniture 6" class="furniture">
+        <!-- 更多家具... -->
+        <div class="hint-list">
+          <div class="hint">
+            <span>效果:+5 XX</span>
+            <span>等級:1</span>
+            <span class="btn upgrade">升級</span>
+          </div>
+        </div>
+      </div>
+      <div class="left-buttons">
+        <div class="btn friend"><span class="btn_friend" title="好友">好友</span><img src="images/friendship.png" alt="">
+        </div>
+        <div class="btn sprites"><span class="btn_sprites" title="精靈">精靈</span><img src="images/monster.png" alt="">
+        </div>
+        <div class="btn egg"><span class="btn_egg" title="孵蛋">孵蛋</span><img src="images/easter-egg.png" alt=""></div>
+        <div class="btn task"><span class="btn_task" title="任務">任務</span><img src="images/goal.png" alt=""></div>
+      </div>
+      <div class="right-buttons">
+        <div class="btn attack"><span class="btn_attack" title="攻擊">攻擊</span><img src="images/battle.png" alt=""></div>
+        <div class="btn defend"><span class="btn_defend" title="防禦">防禦</span><img src="images/defender.png" alt="">
+        </div>
+        <div class="btn counter"><span class="btn_counter" title="反攻">反攻</span><img src="images/slash.png" alt=""></div>
+      </div>
+      <div class="bottom-buttons">
+        <div class="btn shop"><span class="btn_shop" title="商城">商城</span><img src="images/store.png" alt=""></div>
+        <div class="btn feed"><span class="btn_feed" title="餵食">餵食</span><img src="images/eat.png" alt=""></div>
+        <div class="btn play"><span class="btn_play" title="玩耍">玩耍</span><img src="images/hoops.png" alt=""></div>
+        <div class="btn sleep"><span class="btn_sleep" title="睡覺">睡覺</span><img src="images/sleep.png" alt=""></div>
+        <div class="btn clean"><span class="btn_clean" title="洗澡">洗澡</span><img src="images/shower.png" alt=""></div>
+        <div class="btn talent"><span class="btn_talent" title="才藝">才藝</span><img src="images/talent-hunt.png" alt="">
+        </div>
+      </div>
+    </div>
+    <div class="social-page page">
+      這是好友
+    </div>
+    <div class="sprite-page page">
+      這是精靈
+      <div class="sprite-types" id="spriteTypes">
+        <!-- 這裡將由 JavaScript 動態生成精靈 -->
+      </div>
+
+    </div>
+    <div class="eggs-page page">
+      這是孵蛋
+    </div>
+    <div class="tesk-page page">
+      這是任務
+    </div>
+    <div class="shop-page page">
+      這是商店
+    </div>
+    <div class="talent-page page">
+      這是才藝
+    </div>
+    <div class="attack-page page">
+      這是攻擊
+    </div>
+    <div class="defend-page page">
+      這是防禦
+    </div>
+    <div class="counter-page page">
+      這是反攻
+    </div>
+  </div>
+  <script src="js/sprite.js"></script>
+  <script src="js/home.js"></script>
+</body>
+
+</html>
