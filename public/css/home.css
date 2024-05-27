@@ -14,13 +14,13 @@
     bottom: 0;
     left: 0;
     right: 0;
-  }
+}
 
 .game-area {
     position: relative;
     height: 100%;
     width: 100%;
-    background-color:#c7e8f3;
+    background-color: #c7e8f3;
 }
 
 .pet-area {
@@ -30,7 +30,8 @@
     transform: translate(0%, 100%);
     border: 1px solid red;
 }
-.game-area > .pet-area > img {
+
+.game-area>.pet-area>img {
     position: absolute;
     height: 100px;
     /* top: 50%;
@@ -38,13 +39,15 @@
     border: 1px solid blue;
     transform: translate(-50%, -50%);
 }
+
 .game-area::before {
     content: "";
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 50%; /* 可根據需要調整高度比例 */
+    height: 50%;
+    /* 可根據需要調整高度比例 */
     background-color: #f0e5d5;
 }
 
@@ -53,9 +56,12 @@
     position: absolute;
     bottom: -10px;
     left: -10px;
-    width: 250px; /* 可根據需要調整植物圖片的寬度 */
-    height: 200px; /* 可根據需要調整植物圖片的高度 */
-    background-image: url("/images/fern.png"); /* 替換為左下角植物圖片的路徑 */
+    width: 250px;
+    /* 可根據需要調整植物圖片的寬度 */
+    height: 200px;
+    /* 可根據需要調整植物圖片的高度 */
+    background-image: url("/images/fern.png");
+    /* 替換為左下角植物圖片的路徑 */
     background-repeat: no-repeat;
     background-size: contain;
 }
@@ -83,15 +89,15 @@
 }
 
 .furniture:nth-child(3) {
-    transform: translate(-100%,250%);
+    transform: translate(-100%, 250%);
 }
 
 .furniture:nth-child(4) {
-    transform: translate(-400%,360%);
+    transform: translate(-400%, 360%);
 }
 
 .furniture:nth-child(5) {
-    transform: translate(-650%,250%);
+    transform: translate(-650%, 250%);
 }
 
 .furniture:nth-child(6) {
@@ -103,7 +109,7 @@
 
 .furniture:nth-child(7) {
     height: 20vh;
-    transform: translate(-75%,110%);
+    transform: translate(-75%, 110%);
 }
 
 .furniture:nth-child(1) {
@@ -111,8 +117,10 @@
     height: 25vh;
     transform: translate(300%, 25%);
 }
+
 /* 根據需要為每個家具設置不同的位置 */
-.left-buttons, .right-buttons {
+.left-buttons,
+.right-buttons {
     position: absolute;
     /* border: black 1px solid; */
     display: flex;
@@ -151,7 +159,7 @@
     border-radius: 10%;
     transition: background-color 0.3s;
     display: flex;
-    padding:0px 0px 0px 5px;
+    padding: 0px 0px 0px 5px;
     height: 6.5vh;
     border: black 2px solid;
 }
@@ -173,36 +181,44 @@
     margin: 0px 5px;
     transition: transform 0.3s ease;
 }
-.btn > span, .btn > img {
+
+.btn>span,
+.btn>img {
     transform: translate(50%, 0%);
     /* border: red 1px solid; */
     margin: auto;
 }
-.bottom-buttons > .btn {
+
+.bottom-buttons>.btn {
     margin: 0px 1.5vw;
 }
-.right-buttons > .btn {
+
+.right-buttons>.btn {
     margin: 1.5vh 0px;
 }
-.left-buttons > .btn {
+
+.left-buttons>.btn {
     margin: 1.5vh 0px;
 }
-.right-buttons > .btn > img {
+
+.right-buttons>.btn>img {
     transform: translate(-125%, 0%);
 }
-.right-buttons > .btn > span {
+
+.right-buttons>.btn>span {
     transform: translate(100%, 0%);
 }
+
 .friend {
     /*   background-color:blue; */
     /* transform:translateY(-100%); */
     display: flex;
     /* flex-direction: column; */
-    
-    
+
+
 }
 
-.hint-list{
+.hint-list {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -222,19 +238,22 @@
     display: flex;
     /* visibility: hidden; */
 }
+
 .hint span,
 .hint button {
-  display: inline-block;
-  margin-right: 10px;
+    display: inline-block;
+    margin-right: 10px;
 }
-.furniture:hover + .hint-list,
-.furniture:hover ~ .hint-list {
-  visibility: visible;
-  top: 50%;
-  left: calc(50% - (30% / 2));;
-  transform: translate(0%, -50%);
-  transition-delay: 0s;
-  /* transition: top 0.3s ease, left 0.3s ease; */
+
+.furniture:hover+.hint-list,
+.furniture:hover~.hint-list {
+    visibility: visible;
+    top: 50%;
+    left: calc(50% - (30% / 2));
+    ;
+    transform: translate(0%, -50%);
+    transition-delay: 0s;
+    /* transition: top 0.3s ease, left 0.3s ease; */
 }
 
 .page {
@@ -250,4 +269,20 @@
     border-radius: 8px;
     /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); */
     z-index: 9999;
+}
+
+.sprite-page {
+    visibility: hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: aquamarine;
+    /* padding: 0; */
+    width: 80%;
+    height: 90%;
+    border-radius: 8px;
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); */
+    z-index: 9999;
+    background-image: "images/sprite/background.png"
 }
