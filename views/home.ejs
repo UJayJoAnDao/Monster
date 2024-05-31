@@ -4,24 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/sprite.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
       <div class="game-area">
         <div class="pet-area">
           <!-- 精靈的位置 -->
-          <img src="/images/kappa.png" alt="Pet" class="pet">
+          <img src="images/kappa.png" alt="Pet" class="pet">
         </div>
         <div class="furniture-area">
           <!-- 家具的位置 -->
-          <img src="/images/window.png" alt="Furniture 7" class="furniture BG">
-          <img src="/images/furniture.png" alt="Furniture 1" class="furniture">
-          <img src="/images/nintendo-switch.png" alt="Furniture 2" class="furniture">
-          <img src="/images/racing-car.png" alt="Furniture 3" class="furniture">
-          <img src="/images/sport.png" alt="Furniture 4" class="furniture">
-          <img src="/images/bath-tub.png" alt="Furniture 5" class="furniture">
-          <img src="/images/workspace.png" alt="Furniture 6" class="furniture">
+          <img src="images/window.png" alt="Furniture 7" class="furniture BG">
+          <img src="images/furniture.png" alt="Furniture 1" class="furniture">
+          <img src="images/nintendo-switch.png" alt="Furniture 2" class="furniture">
+          <img src="images/racing-car.png" alt="Furniture 3" class="furniture">
+          <img src="images/sport.png" alt="Furniture 4" class="furniture">
+          <img src="images/bath-tub.png" alt="Furniture 5" class="furniture">
+          <img src="images/workspace.png" alt="Furniture 6" class="furniture">
           <!-- 更多家具... -->
           <div class="hint-list">
             <div class="hint">
@@ -56,6 +60,9 @@
       </div>
       <div class="sprite-page page">
         這是精靈
+        <div class="sprite-types" id="spriteTypes">
+          <!-- 這裡將由 JavaScript 動態生成精靈 -->
+        </div>
       </div>
       <div class="eggs-page page">
         這是孵蛋
@@ -79,6 +86,7 @@
         這是反攻
       </div>
     </div>
+    <script src="js/sprite.js"></script>
     <script src="/js/home.js"></script>
 </body>
 </html>
