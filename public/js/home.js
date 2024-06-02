@@ -12,6 +12,7 @@ const playBtn = document.querySelector('.play');
 const sleepBtn = document.querySelector('.sleep');
 const cleanBtn = document.querySelector('.clean');
 const talentBtn = document.querySelector('.talent');
+const closeBtn = document.querySelector('.close');
 
 // 獲取更多按鈕...
 
@@ -41,10 +42,17 @@ const attack_page = document.querySelector('.attack-page');
 const defend_page = document.querySelector('.defend-page');
 const counter_page = document.querySelector('.counter-page');
 
-all_pages.forEach(page => {
-    page.addEventListener('click', () => {
-        page.style.visibility = 'hidden';
-    });
+const closeBtns = document.querySelectorAll('.header-close');
+// all_pages.forEach(page => {
+//     page.addEventListener('click', () => {
+//         page.style.visibility = 'hidden';
+//     });
+// });
+closeBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        // 關閉這顆按鈕所在的頁面
+        btn.parentElement.parentElement.style.visibility = 'hidden';
+    })
 });
 
 // 定義按鈕功能函數

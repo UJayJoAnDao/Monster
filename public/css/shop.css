@@ -1,0 +1,72 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    padding: 0px 20px;
+    background-color: #f0f0f0;
+  }
+  
+  .header-title {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .header-close {
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  .main-container {
+    display: flex;
+    height: 100%;
+    border-color: bisque 1px solid;
+  }
+  
+  .category-container {
+    width: 15%;
+    height: 100%;
+    border-right: 1px solid #ccc;
+    padding: 20px;
+  }
+  
+  .category-item {
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+  
+  .category-item.active {
+    color: blue;
+    font-weight: bold;
+  }
+  
+  .product-container {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto; /* 添加垂直滾動條 */
+    max-height: calc(95% - 50px); /* 設置最大高度,留出頂部導航和分類的空間 */
+  }
+  
+  .product-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+  
+  .product-item {
+    width: 50%;
+    height: 150px;
+    text-align: center;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  
+  .product-item img {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .product-name {
+    margin-top: 5px;
+    font-size: 14px;
+  }

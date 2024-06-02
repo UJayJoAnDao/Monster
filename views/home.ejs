@@ -6,6 +6,8 @@
     <title>Document</title>
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/sprite.css">
+    <link rel="stylesheet" href="css/shop.css">
+    <link rel="stylesheet" href="css/incubation.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
@@ -65,13 +67,118 @@
         </div>
       </div>
       <div class="eggs-page page">
-        這是孵蛋
+        <div class="header-banner">這是孵蛋</div>
+        <div class="cards">
+            <div class="card">
+              <div class="egg-container">
+                <div class="progress" id="progress-bar" style="height: 70%;"></div>
+              </div>
+              <div class="card-footer">蛋蛋1</div>
+            </div>
+            <div class="card">
+              <div class="egg-container">
+                <div class="progress" id="progress-bar" style="height: 40%;"></div>
+              </div>
+              <div class="card-footer">蛋蛋2</div>
+            </div>
+            <div class="card">
+              <div class="egg-container">
+                <div class="progress" id="progress-bar" style="height: 20%;"></div>
+              </div>
+              <div class="card-footer">蛋蛋3</div>
+            </div>
+        </div>
+        <div class="arrow-left">&lt;</div>
+        <div class="arrow-right">&gt;</div>
+        <!-- <div class="footer">Footer</div> -->
+        <!-- <div id="egg-container"></div> -->
       </div>
       <div class="tesk-page page">
         這是任務
       </div>
       <div class="shop-page page">
-        這是商店  
+        <div class="header">
+          <div class="header-title">商城</div>
+          <div class="header-close">×</div>
+        </div>
+        <div class="main-container">
+          <div class="category-container">
+            <div class="category-item active" data-category="egg">精靈蛋</div>
+            <div class="category-item" data-category="shield">防禦道具</div>
+            <div class="category-item" data-category="recovery">互動升級</div>
+          </div>
+        
+          <div class="product-container">
+            <div class="product-row" id="egg">
+              <div class="product-item">
+                <img src="paint-egg.png" alt="精靈蛋">
+                <div class="product-name">XX$</div>
+              </div>
+              <div class="product-item">
+                <img src="furniture.png" alt="家具1">
+                <div class="product-name">XX$</div>
+              </div>
+              <div class="product-item">
+                <img src="furniture.png" alt="家具2">
+                <div class="product-name">XX$</div>
+              </div>
+              <div class="product-item">
+                <img src="furniture.png" alt="家具3">
+                <div class="product-name">XX$</div>
+              </div>
+              <div class="product-item">
+                <img src="furniture.png" alt="家具4">
+                <div class="product-name">XX$</div>
+              </div>
+              <div class="product-item">
+                <img src="furniture.png" alt="家具5">
+                <div class="product-name">XX$</div>
+              </div>
+              <div class="product-item">
+                <img src="furniture.png" alt="家具6">
+                <div class="product-name">XX$</div>
+              </div>
+              <div class="product-item">
+                <img src="furniture.png" alt="家具7">
+                <div class="product-name">XX$</div>
+              </div>
+              <div class="product-item">
+                <img src="furniture.png" alt="家具8">
+                <div class="product-name">XX$</div>
+              </div>
+              <div class="product-item">
+                <img src="furniture.png" alt="家具9">
+                <div class="product-name">XX$</div>
+              </div>
+              <div class="product-item">
+                <img src="furniture.png" alt="家具10">
+                <div class="product-name">XX$</div>
+              </div>
+              <div class="product-item">
+                <img src="furniture.png" alt="家具11">
+                <div class="product-name">XX$</div>
+              </div>
+            </div>
+            
+            <div class="product-row" id="shield" style="display: none;">
+              <div class="product-item">
+                <img src="shield.png" alt="防禦道具"> 
+                <div class="product-name">XX$</div>
+              </div>
+            </div>
+        
+            <div class="product-row" id="recovery" style="display: none;">  
+              <div class="product-item">
+                <img src="recovery.png" alt="互動升級">
+                <div class="product-name">XX$</div> 
+              </div>
+              <div class="product-item">
+                <img src="bear.png" alt="XX$">
+                <div class="product-name">XX$</div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="talent-page page">
         這是才藝
@@ -86,7 +193,8 @@
         這是反攻
       </div>
     </div>
+    <script src="js/shop.js"></script>
     <script src="js/sprite.js"></script>
-    <script src="/js/home.js"></script>
+    <script src="js/home.js"></script>
 </body>
 </html>
