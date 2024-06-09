@@ -6,12 +6,28 @@
     border-radius: 5px;
     margin-bottom: 20px;
     display: flex;
+}
+.header-banner .header-title {
+    margin: 0 auto;
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+    
+    display: flex;
     justify-content: center;
     align-items: center;
+    border: #6e4aa7 2px solid;
+}
+.header-banner .header-close {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: #6e4aa7 2px solid;
     color: #fff;
-    font-weight: bold;
     font-size: 20px;
+    cursor: pointer;
     position: relative;
+    right: 10px;
 }
 .cards {
     display: flex;
