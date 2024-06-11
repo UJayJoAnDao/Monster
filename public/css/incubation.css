@@ -1,3 +1,11 @@
+.eggs-page {
+    background-color: #2e3a4b;
+    display: flex;
+    align-items: space-around;
+    height: 60%;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+}
 /* 頂端Banner */
 .header-banner {
     background: linear-gradient(145deg, #169f99, #40d4d2);
@@ -16,13 +24,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border: #6e4aa7 2px solid;
 }
 .header-banner .header-close {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: #6e4aa7 2px solid;
     color: #fff;
     font-size: 20px;
     cursor: pointer;

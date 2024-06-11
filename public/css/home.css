@@ -28,7 +28,7 @@
     height: 50%;
     width: 100%;
     transform: translate(0%, 100%);
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 
 .game-area>.pet-area>img {
@@ -36,7 +36,8 @@
     height: 100px;
     /* top: 50%;
     left: 50%; */
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
+    z-index: 9999;
     transform: translate(-50%, -50%);
 }
 
@@ -80,7 +81,7 @@
     position: relative;
     height: 10vh;
     cursor: pointer;
-    border: blue 1px solid;
+    /* border: blue 1px solid; */
 }
 
 .furniture:nth-child(2) {
@@ -271,6 +272,7 @@
     z-index: 9999;
     display: flex;
     flex-direction: column;
+    /* font-family: 'Arial', sans-serif; */
 }
 
 .sprite-page {
