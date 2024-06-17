@@ -1,3 +1,37 @@
+async function getUserInfo(username) {
+    console.log(`Starting request for ${username}`);
+    if (username.endsWith('.png') || username.endsWith('.jpg') || username.endsWith('.jpeg') || username.endsWith('.gif')){ // 如果URL是圖片的路徑，則返回null
+        return null;
+    }
+    try {
+        const response = await fetch(`http://127.0.0.1:5000/user?name=${username}`);
+        const data = await response.json();
+        console.log(data[0]);
+        return data[0];
+    } catch (error) {
+        console.error(error);
+        return null;
+    }
+}
+const myName = window.location.pathname.split('/').pop();
+let info = {
+    name: '',
+    money: 0,
+    HP: 100
+};
+
+getUserInfo(myName).then(userInfo => {
+    const firstUser = userInfo;
+    console.log(firstUser);
+    info.name = firstUser[0];
+    info.money = firstUser[1];
+    info.HP = firstUser[2];
+    document.querySelector('.player-name').textContent = '玩家名稱: '+info.name;
+    document.querySelector('.player-money').textContent = '資金: $'+info.money;
+    document.querySelector('.player-HP').textContent = '血量: '+info.HP;
+}).catch(error => {
+    console.error(error);
+});
 // 獲取所有按鈕元素
 const friendBtn = document.querySelector('.friend');
 const petBtn = document.querySelector('.sprites');
@@ -54,6 +88,7 @@ closeBtns.forEach(btn => {
         btn.parentElement.parentElement.style.visibility = 'hidden';
     })
 });
+
 
 // 定義按鈕功能函數
 function feedPet() {

@@ -1,7 +1,9 @@
 from flask import Flask, request
+from flask_cors import CORS
 import Database_function as db
 
 app = Flask(__name__)
+CORS(app)  # 允许所有域名访问
 
 @app.route('/user', methods=['GET'])
 def get_user():
