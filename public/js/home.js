@@ -38,9 +38,9 @@ const friendBtn = document.querySelector('.friend');
 const petBtn = document.querySelector('.sprites');
 const eggBtn = document.querySelector('.egg');
 const taskBtn = document.querySelector('.task');
-const attackBtn = document.querySelector('.attack');
-const defendBtn = document.querySelector('.defend');
-const counterBtn = document.querySelector('.counter');
+// const attackBtn = document.querySelector('.attack');
+// const defendBtn = document.querySelector('.defend');
+// const counterBtn = document.querySelector('.counter');
 const shopBtn = document.querySelector('.shop');
 const feedBtn = document.querySelector('.feed');
 const playBtn = document.querySelector('.play');
@@ -60,9 +60,9 @@ friendBtn.addEventListener('click', showSocialPage);
 petBtn.addEventListener('click', showSpritePage);
 eggBtn.addEventListener('click', showEggsPage);
 taskBtn.addEventListener('click', showTaskPage);
-attackBtn.addEventListener('click', showAttackPage);
-defendBtn.addEventListener('click', showDefendPage);
-counterBtn.addEventListener('click', showCounterPage);
+// attackBtn.addEventListener('click', showAttackPage);
+// defendBtn.addEventListener('click', showDefendPage);
+// counterBtn.addEventListener('click', showCounterPage);
 talentBtn.addEventListener('click', showTalentPage);
 
 // 頁面元素
