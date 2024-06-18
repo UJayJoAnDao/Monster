@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request,jsonify
 from flask_cors import CORS
 import Database_function as db
 
@@ -10,9 +10,11 @@ def get_user():
     name = request.args.get('name')
     print(name)
     result = db.User_select(name)
+    sprites = db.sprite()
     if result is None:
         return {'message': 'User not found'}, 404
-    return result
+    print(sprites,result)
+    return jsonify({'user': result, 'sprites': sprites})
 
 @app.route('/user', methods=['POST'])
 def update_user():
@@ -22,7 +24,11 @@ def update_user():
     HP = data['HP']
     db.update_User(name, money, HP)
     return {'message': 'User updated successfully'}
-
+@app.route('/sprites', methods=['GET'])
+def get_sprites():
+    # 這是你需要的數據庫查詢函數
+    sprites = db.sprite()
+    return jsonify(sprites)
 # 其他的路由和函式...
 
 if __name__ == '__main__':

@@ -121,7 +121,14 @@ def UserSprites_select(name):
 
     # 關閉連接
     conn.close()
-
+def sprite():
+    conn = sqlite3.connect('MY.db')
+    cursor = conn.cursor()
+    cursor.execute('''SELECT * FROM Sprites''')
+    sprite_data = cursor.fetchall()
+    print(sprite_data)
+    conn.close()
+    return sprite_data
 # 取得與其他表所對應的key value
 def social(friend):
     conn = sqlite3.connect('MY.db')
@@ -185,7 +192,7 @@ def update_User(user_name, money, HP):
     # 關閉連接
     conn.close()
 
-if __name__ == '__main__':
+# if __name__ == '__main__':
     # ------ insert區塊 ------
     # insert()
     # UserSprites()
@@ -198,4 +205,5 @@ if __name__ == '__main__':
     # UserSprites_select('Alice')                           # 顯使使用者擁有的精靈資訊
 
     # update_User('Alice', 0, 100)                          # 更新使用者資訊
-    User_select('Alice')                                    # 顯示使用者資訊
+    # User_select('Alice')                                    # 顯示使用者資訊
+    # sprite()
