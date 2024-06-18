@@ -216,7 +216,7 @@ def update_User(user_name, money, HP):
     # 關閉連接
     conn.close()
 
-# if __name__ == '__main__':
+if __name__ == '__main__':
     # ------ insert區塊 ------
     # insert()
     # UserSprites()
@@ -225,9 +225,9 @@ def update_User(user_name, money, HP):
     # ------ 功能區塊 ------
     # social('Friend1')                                     # 找出社交關係
     # account('alice_account')                              # 判斷帳號是否存在
-    # update_Sprites(10,'Alice', 1)                         # 更新使用者擁有的精靈資訊
-    # UserSprites_select('Alice')                           # 顯使使用者擁有的精靈資訊
+    #update_Sprites(20,'Alice', 3)                         # 更新使用者擁有的精靈資訊
+    UserSprites_select('Alice')                           # 顯使使用者擁有的精靈資訊
 
     # update_User('Alice', 0, 100)                          # 更新使用者資訊
-    User_select('Alice')                                # 顯示使用者資訊
-    # sprite()
+    #User_select('Alice')                                # 顯示使用者資訊
+    #sprite()

@@ -32,7 +32,7 @@ function checkAnswer(selectedOption) {
     const resultElement = document.getElementById('result');
 
     if (selectedOption === randomImage.answer) {
-        resultElement.textContent = '恭喜';
+        resultElement.textContent = '正確';
         resultElement.className = 'result correct';
     } else {
         resultElement.textContent = '錯誤';
