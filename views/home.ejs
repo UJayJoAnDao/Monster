@@ -8,13 +8,22 @@
   <link rel="stylesheet" href="css/home.css">
   <link rel="stylesheet" href="css/sprite.css">
   <link rel="stylesheet" href="css/shop.css">
+  <link rel="stylesheet" href="css/incubation.css">
+  <link rel="stylesheet" href="css/task.css">
+  <link rel="stylesheet" href="css/talent.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
   <div class="container">
+    <div class="player-info">
+      <span class="player-name">玩家名稱: Test</span>
+      <span class="player-money">資金: $100000</span>
+      <span class="player-HP">血量: 1000</span>
+    </div>
     <div class="game-area">
       <div class="pet-area">
         <!-- 精靈的位置 -->
@@ -22,13 +31,13 @@
       </div>
       <div class="furniture-area">
         <!-- 家具的位置 -->
-        <img src="images/window.png" alt="Furniture 7" class="furniture BG">
-        <img src="images/furniture.png" alt="Furniture 1" class="furniture">
-        <img src="images/nintendo-switch.png" alt="Furniture 2" class="furniture">
-        <img src="images/racing-car.png" alt="Furniture 3" class="furniture">
-        <img src="images/sport.png" alt="Furniture 4" class="furniture">
-        <img src="images/bath-tub.png" alt="Furniture 5" class="furniture">
-        <img src="images/workspace.png" alt="Furniture 6" class="furniture">
+        <img src="images/furnitures/window.png" alt="Furniture 7" class="furniture BG">
+        <img src="images/furnitures/furniture.png" alt="Furniture 1" class="furniture">
+        <img src="images/furnitures/nintendo-switch.png" alt="Furniture 2" class="furniture">
+        <img src="images/furnitures/racing-car.png" alt="Furniture 3" class="furniture">
+        <img src="images/furnitures/sport.png" alt="Furniture 4" class="furniture">
+        <img src="images/furnitures/bath-tub.png" alt="Furniture 5" class="furniture">
+        <img src="images/furnitures/workspace.png" alt="Furniture 6" class="furniture">
         <!-- 更多家具... -->
         <div class="hint-list">
           <div class="hint">
@@ -39,26 +48,27 @@
         </div>
       </div>
       <div class="left-buttons">
-        <div class="btn friend"><span class="btn_friend" title="好友">好友</span><img src="images/friendship.png" alt="">
+        <div class="btn friend"><span class="btn_friend" title="好友">好友</span><img src="/images/friendship.png" alt="">
         </div>
-        <div class="btn sprites"><span class="btn_sprites" title="精靈">精靈</span><img src="images/monster.png" alt="">
+        <div class="btn sprites"><span class="btn_sprites" title="精靈">精靈</span><img src="/images/monster.png" alt="">
         </div>
-        <div class="btn egg"><span class="btn_egg" title="孵蛋">孵蛋</span><img src="images/easter-egg.png" alt=""></div>
-        <div class="btn task"><span class="btn_task" title="任務">任務</span><img src="images/goal.png" alt=""></div>
+        <div class="btn egg"><span class="btn_egg" title="孵蛋">孵蛋</span><img src="/images/easter-egg.png" alt=""></div>
+        <div class="btn task"><span class="btn_task" title="任務">任務</span><img src="/images/goal.png" alt=""></div>
       </div>
       <div class="right-buttons">
-        <div class="btn attack"><span class="btn_attack" title="攻擊">攻擊</span><img src="images/battle.png" alt=""></div>
-        <div class="btn defend"><span class="btn_defend" title="防禦">防禦</span><img src="images/defender.png" alt="">
+        <div class="btn attack"><span class="btn_attack" title="攻擊">攻擊</span><img src="/images/battle.png" alt=""></div>
+        <div class="btn defend"><span class="btn_defend" title="防禦">防禦</span><img src="/images/defender.png" alt="">
         </div>
-        <div class="btn counter"><span class="btn_counter" title="反攻">反攻</span><img src="images/slash.png" alt=""></div>
+        <div class="btn counter"><span class="btn_counter" title="反攻">反攻</span><img src="/images/slash.png" alt="">
+        </div>
       </div>
       <div class="bottom-buttons">
-        <div class="btn shop"><span class="btn_shop" title="商城">商城</span><img src="images/store.png" alt=""></div>
-        <div class="btn feed"><span class="btn_feed" title="餵食">餵食</span><img src="images/eat.png" alt=""></div>
-        <div class="btn play"><span class="btn_play" title="玩耍">玩耍</span><img src="images/hoops.png" alt=""></div>
-        <div class="btn sleep"><span class="btn_sleep" title="睡覺">睡覺</span><img src="images/sleep.png" alt=""></div>
-        <div class="btn clean"><span class="btn_clean" title="洗澡">洗澡</span><img src="images/shower.png" alt=""></div>
-        <div class="btn talent"><span class="btn_talent" title="才藝">才藝</span><img src="images/talent-hunt.png" alt="">
+        <div class="btn shop"><span class="btn_shop" title="商城">商城</span><img src="/images/store.png" alt=""></div>
+        <div class="btn feed"><span class="btn_feed" title="餵食">餵食</span><img src="/images/eat.png" alt=""></div>
+        <div class="btn play"><span class="btn_play" title="玩耍">玩耍</span><img src="/images/hoops.png" alt=""></div>
+        <div class="btn sleep"><span class="btn_sleep" title="睡覺">睡覺</span><img src="/images/sleep.png" alt=""></div>
+        <div class="btn clean"><span class="btn_clean" title="洗澡">洗澡</span><img src="/images/shower.png" alt=""></div>
+        <div class="btn talent"><span class="btn_talent" title="才藝">才藝</span><img src="/images/talent-hunt.png" alt="">
         </div>
       </div>
     </div>
@@ -66,26 +76,172 @@
       這是好友
     </div>
     <div class="sprite-page page">
-      精靈圖鑑
+      <div class="header-banner">
+        <div class="header-title">精靈圖鑑</div>
+        <div class="header-close">X</div>
+      </div>
       <div class="sprite-types" id="spriteTypes">
         <!-- 這裡將由 JavaScript 動態生成精靈 -->
       </div>
 
     </div>
+
     <div class="eggs-page page">
-      這是孵蛋
+      <div class="header-banner">
+        <div class="header-title">孵蛋</div>
+        <div class="header-close">X</div>
+      </div>
+      <div class="cards">
+        <div class="card">
+          <div class="egg-container">
+            <div class="progress" id="progress-bar" style="height: 70%;"></div>
+          </div>
+          <div class="card-footer">蛋蛋1</div>
+        </div>
+        <div class="card">
+          <div class="egg-container">
+            <div class="progress" id="progress-bar" style="height: 40%;"></div>
+          </div>
+          <div class="card-footer">蛋蛋2</div>
+        </div>
+        <div class="card">
+          <div class="egg-container">
+            <div class="progress" id="progress-bar" style="height: 20%;"></div>
+          </div>
+          <div class="card-footer">蛋蛋3</div>
+        </div>
+      </div>
+      <div class="arrow-left">&lt;</div>
+      <div class="arrow-right">&gt;</div>
+      <!-- <div class="footer">Footer</div>
+        <div id="egg-container"></div> -->
     </div>
-    <div class="tesk-page page">
-      這是任務
+    <div class="task-page page">
+      <div class="header-banner">
+        <div class="header-title">任務</div>
+        <div class="header-close">X</div>
+      </div>
+      <div class="task-list">
+        <div class="task">
+          <div class="task-title">任務1:升級家具(0/5)</div>
+          <div class="progress">
+            <div class="progress-bar" style="width: 50%;"></div>
+          </div>
+        </div>
+        <div class="task">
+          <div class="task-title">任務2:攻打他人(0/1)</div>
+          <div class="progress">
+            <div class="progress-bar" style="width: 10%;"></div>
+          </div>
+        </div>
+        <div class="task">
+          <div class="task-title">任務3:孵蛋(1/1)</div>
+          <div class="progress">
+            <div class="progress-bar" style="width: 100%;"></div>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="shop-page page">
-      <div class="container">
-        <h1>絕對誠實良心商店</h1>
-        <div id="products" class="products"></div>
+      <div class="header">
+        <div class="header-title">商城</div>
+        <div class="header-close">×</div>
+      </div>
+      <div class="main-container">
+        <div class="category-container">
+          <div class="category-item active" data-category="egg">精靈蛋</div>
+          <div class="category-item" data-category="shield">防禦道具</div>
+          <div class="category-item" data-category="recovery">互動升級</div>
+        </div>
+
+        <div class="product-container">
+          <div class="product-row" id="egg">
+            <div class="product-item">
+              <img src="paint-egg.png" alt="精靈蛋">
+              <div class="product-name">XX$</div>
+            </div>
+            <div class="product-item">
+              <img src="furniture.png" alt="家具1">
+              <div class="product-name">XX$</div>
+            </div>
+            <div class="product-item">
+              <img src="furniture.png" alt="家具2">
+              <div class="product-name">XX$</div>
+            </div>
+            <div class="product-item">
+              <img src="furniture.png" alt="家具3">
+              <div class="product-name">XX$</div>
+            </div>
+            <div class="product-item">
+              <img src="furniture.png" alt="家具4">
+              <div class="product-name">XX$</div>
+            </div>
+            <div class="product-item">
+              <img src="furniture.png" alt="家具5">
+              <div class="product-name">XX$</div>
+            </div>
+            <div class="product-item">
+              <img src="furniture.png" alt="家具6">
+              <div class="product-name">XX$</div>
+            </div>
+            <div class="product-item">
+              <img src="furniture.png" alt="家具7">
+              <div class="product-name">XX$</div>
+            </div>
+            <div class="product-item">
+              <img src="furniture.png" alt="家具8">
+              <div class="product-name">XX$</div>
+            </div>
+            <div class="product-item">
+              <img src="furniture.png" alt="家具9">
+              <div class="product-name">XX$</div>
+            </div>
+            <div class="product-item">
+              <img src="furniture.png" alt="家具10">
+              <div class="product-name">XX$</div>
+            </div>
+            <div class="product-item">
+              <img src="furniture.png" alt="家具11">
+              <div class="product-name">XX$</div>
+            </div>
+          </div>
+
+          <div class="product-row" id="shield" style="display: none;">
+            <div class="product-item">
+              <img src="shield.png" alt="防禦道具">
+              <div class="product-name">XX$</div>
+            </div>
+          </div>
+
+          <div class="product-row" id="recovery" style="display: none;">
+            <div class="product-item">
+              <img src="recovery.png" alt="互動升級">
+              <div class="product-name">XX$</div>
+            </div>
+            <div class="product-item">
+              <img src="bear.png" alt="XX$">
+              <div class="product-name">XX$</div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <div class="talent-page page">
-      這是才藝
+      <div class="header-banner">
+        <div class="header-title">Show才藝</div>
+        <div class="header-close">X</div>
+      </div>
+      <h1>選擇正確答案</h1>
+      <div class="question">
+        <img id="randomImage" src="" alt="Random Image">
+        <p>問題：哪一個選項是正確的？</p>
+        <button onclick="checkAnswer('A')">A</button>
+        <button onclick="checkAnswer('B')">B</button>
+        <button onclick="checkAnswer('C')">C</button>
+        <button onclick="checkAnswer('D')">D</button>
+        <div id="result" class="result"></div>
+      </div>
+
     </div>
     <div class="attack-page page">
       這是攻擊
@@ -97,9 +253,10 @@
       這是反攻
     </div>
   </div>
+  <script src="js/shop.js"></script>
   <script src="js/sprite.js"></script>
   <script src="js/home.js"></script>
-  <script src="js/shop.js"></script>
+  <script src="js/talent.js"></script>
 </body>
 
 </html>

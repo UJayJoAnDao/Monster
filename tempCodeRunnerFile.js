@@ -1,0 +1,1 @@
+SELECT Type, Name, Image, Info FROM Sprites WHERE Name

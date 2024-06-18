@@ -1,67 +1,74 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  padding: 0px 20px;
+  background-color: #f0f0f0;
 }
 
-.container {
-    width: 80%;
-    margin: 0 auto;
-    padding: 20px;
+.header-title {
+  font-size: 18px;
+  font-weight: bold;
 }
 
-h1 {
-    text-align: center;
-    margin-bottom: 40px;
+.header-close {
+  font-size: 24px;
+  cursor: pointer;
 }
 
-.products {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
+.main-container {
+  display: flex;
+  height: 100%;
+  border-color: bisque 1px solid;
 }
 
-.product {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    text-align: center;
-    width: 200px;
+.category-container {
+  width: 15%;
+  height: 100%;
+  border-right: 1px solid #ccc;
+  padding: 20px;
 }
 
-.product img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
+.category-item {
+  margin-bottom: 10px;
+  cursor: pointer;
 }
 
-.product h2 {
-    font-size: 1.2em;
-    margin: 10px 0;
+.category-item.active {
+  color: blue;
+  font-weight: bold;
 }
 
-.product p {
-    font-size: 1em;
-    color: #333;
+.product-container {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  /* 添加垂直滾動條 */
+  max-height: calc(95% - 50px);
+  /* 設置最大高度,留出頂部導航和分類的空間 */
 }
 
-.product button {
-    background-color: #28a745;
-    border: none;
-    color: #fff;
-    padding: 10px 15px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 1em;
-    border-radius: 5px;
-    cursor: pointer;
+.product-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
 }
 
-.product button:hover {
-    background-color: #218838;
+.product-item {
+  width: 50%;
+  height: 150px;
+  text-align: center;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.product-item img {
+  width: 50px;
+  height: 50px;
+}
+
+.product-name {
+  margin-top: 5px;
+  font-size: 14px;
 }

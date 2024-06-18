@@ -1,4 +1,4 @@
-// 定義圖片和對應的正確答案
+//定義圖片和對應的正確答案
 const images = [
     { src: 'images/talent/quetion1.png', answer: 'A' },
     { src: 'images/talent/quetion2.png', answer: 'B' },
@@ -39,5 +39,4 @@ function checkAnswer(selectedOption) {
         resultElement.className = 'result incorrect';
     }
 
-    resultElement.style.display = 'block';
 }
