@@ -16,7 +16,7 @@ router.get('/login', (req, res) => {
 // Home page route
 router.get('/:username', async (req, res, next) => {
     const username = req.params.username;
-    if (username.endsWith('.png') || username.endsWith('.jpg') || username.endsWith('.jpeg') || username.endsWith('.gif')){
+    if (username.endsWith('.png') || username.endsWith('.jpg') || username.endsWith('.jpeg') || username.endsWith('.gif')||username.endsWith('.ico')){
         // 如果URL是圖片的路徑，則跳過getUserInfo並繼續處理其他中間件或路由
         next();
     } else {

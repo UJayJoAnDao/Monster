@@ -13,13 +13,38 @@ async function getUserInfo(username) {
         return null;
     }
 }
+async function updateUserInfo(username, money, HP) {
+    console.log(`UpdateUserInfo for ${username}`);
+    if (username.endsWith('.png') || username.endsWith('.jpg') || username.endsWith('.jpeg') || username.endsWith('.gif')){ // 如果URL是圖片的路徑，則返回null
+        return null;
+    }
+    try {
+        const response = await fetch('http://127.0.0.1:5000/user', {
+            method: 'POST', // or 'PUT'
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                name: username,
+                money: money,
+                HP: HP
+            }),
+        });
+        const data = await response.json();
+        console.log(data);
+        return data;
+    } catch (error) {
+        console.error(error);
+        return null;
+    }
+}
+
 const myName = window.location.pathname.split('/').pop();
 let info = {
     name: '',
     money: 0,
     HP: 100
 };
-
 getUserInfo(myName).then(userInfo => {
     const firstUser = userInfo;
     console.log(firstUser);
@@ -92,7 +117,13 @@ closeBtns.forEach(btn => {
 
 // 定義按鈕功能函數
 function feedPet() {
-    // 餵藥功能的實現
+    // 餵食功能的實現
+    info.money -= 10;
+    info.HP += 10;
+    document.querySelector('.player-money').textContent = '資金: $'+info.money;
+    document.querySelector('.player-HP').textContent = '血量: '+info.HP;
+    updateUserInfo(info.name, info.money, info.HP);
+    
 }
 
 function playWithPet() {
