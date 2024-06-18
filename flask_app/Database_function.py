@@ -47,6 +47,30 @@ def insert():
                    ('書桌', '降低損失資金level*10元', 400))
     cursor.execute('INSERT INTO Item (name, info, price) VALUES (?, ?, ?)',
                    ('我有一台法拉利', '他人攻擊數值-(Level*2)點', 500))
+
+    # 插入 Shop 資料
+    cursor.execute('INSERT INTO Shop (name, price, image) VALUES (?, ?, ?)',
+                   ('精靈蛋蛋', 500, 'images/product1.png'))
+    cursor.execute('INSERT INTO Shop (name, price, image) VALUES (?, ?, ?)',
+                   ('魔法藥水', 300, 'images/product2.png'))
+    cursor.execute('INSERT INTO Shop (name, price, image) VALUES (?, ?, ?)',
+                   ('我們一起', 400, 'images/product3.png'))
+    cursor.execute('INSERT INTO Shop (name, price, image) VALUES (?, ?, ?)',
+                   ('去太空旅行', 500, 'images/product4.png'))
+
+    cursor.execute('INSERT INTO Shop (name, price, image) VALUES (?, ?, ?)',
+                   ('遊戲機', 200, 'images/furnitures/nintendo-switch.png'))
+    cursor.execute('INSERT INTO Shop (name, price, image) VALUES (?, ?, ?)',
+                   ('衣櫥', 300, 'images/furnitures/furniture.png'))
+    cursor.execute('INSERT INTO Shop (name, price, image) VALUES (?, ?, ?)',
+                   ('運動用品', 100, 'images/furnitures/sport.png'))
+    cursor.execute('INSERT INTO Shop (name, price, image) VALUES (?, ?, ?)',
+                   ('浴缸', 100, 'images/furnitures/bath-tub.png'))
+    cursor.execute('INSERT INTO Shop (name, price, image) VALUES (?, ?, ?)',
+                   ('書桌', 400, 'images/furnitures/workspace.png'))
+    cursor.execute('INSERT INTO Shop (name, price, image) VALUES (?, ?, ?)',
+                   ('我有一台法拉利', 500, ' images/furnitures/racing-car.png'))
+
     # 提交變更
     conn.commit()
 
@@ -195,7 +219,8 @@ if __name__ == '__main__':
     # social('Friend1')                                     # 找出社交關係
     # account('alice_account')                              # 判斷帳號是否存在
     # update_Sprites(10,'Alice', 1)                         # 更新使用者擁有的精靈資訊
-    # UserSprites_select('Alice')                           # 顯使使用者擁有的精靈資訊
+    UserSprites_select('Alice')                           # 顯使使用者擁有的精靈資訊
 
     # update_User('Alice', 0, 100)                          # 更新使用者資訊
-    User_select('Alice')                                    # 顯示使用者資訊
+    # User_select('Alice')                                    # 顯示使用者資訊
+    # pass

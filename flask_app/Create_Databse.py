@@ -68,6 +68,17 @@ cursor.execute('''
     )
 ''')
 
+# 建立 Shop 表格
+cursor.execute('''
+    CREATE TABLE Shop (
+        ItemID INTEGER  PRIMARY KEY AUTOINCREMENT,
+        name TEXT,
+        price INTEGER,
+        image VARCHAR(255)
+    )
+''')
+
+
 # 提交變更
 conn.commit()
 
