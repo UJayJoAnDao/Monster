@@ -48,7 +48,15 @@ function showSpiritInfo(event) {
     var experience = event.target.dataset.experience;
     var info = event.target.dataset.info;
 
-    alert('精靈名稱：' + spiritName + '經驗值' + experience + '資訊' + info)
+    var userResponse = confirm('精靈名稱：' + spiritName + '\n經驗值：' + experience + '\n資訊：' + info + '\n\n是否要將此精靈設置在主畫面上？');
+    if (userResponse) {
+        // 如果用戶點選是，執行相應的動作
+        alert('精靈' + spiritName + '已設置在主畫面上');
+        // 此處可加入設置精靈在主畫面上的邏輯
+    } else {
+        // 如果用戶點選取消，關閉對話框即可
+        alert('取消設置精靈');
+    }
 }
 
 // 在每個精靈圖片上添加點擊事件監聽器
