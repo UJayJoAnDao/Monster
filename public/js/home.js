@@ -1,15 +1,30 @@
+const dbAPI = 'http://127.0.0.1:5000'
 async function getUserInfo(username) {
     console.log(`Starting request for ${username}`);
     if (username.endsWith('.png') || username.endsWith('.jpg') || username.endsWith('.jpeg') || username.endsWith('.gif')){ // 如果URL是圖片的路徑，則返回null
         return null;
     }
+    const api = dbAPI+`/user?name=${username}`;
+    console.log(api);
+    console.log(typeof api);
     try {
-        const response = await fetch(`http://127.0.0.1:5000/user?name=${username}`);
+        const response = await fetch(api, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            }
+        });
+        if (!response.ok) {
+            console.error(`Error: ${response.status}`);
+            return null;
+        }
+
         const data = await response.json();
         console.log(data[0]);
         return data[0];
     } catch (error) {
-        console.error(error);
+        console.error("錯誤getUserInfo:"+error);
         return null;
     }
 }
@@ -18,8 +33,9 @@ async function updateUserInfo(username, money, HP) {
     if (username.endsWith('.png') || username.endsWith('.jpg') || username.endsWith('.jpeg') || username.endsWith('.gif')){ // 如果URL是圖片的路徑，則返回null
         return null;
     }
+    const api = dbAPI+'/user';
     try {
-        const response = await fetch('http://127.0.0.1:5000/user', {
+        const response = await fetch(api, {
             method: 'POST', // or 'PUT'
             headers: {
                 'Content-Type': 'application/json',
@@ -45,7 +61,7 @@ async function attackTo(username, damage) {
         return null;
     }
     try {
-        const response = await fetch('http://127.0.0.1:5000/attack', {
+        const response = await fetch(dbAPI+'/attack', {
             method: 'POST', // or 'PUT'
             headers: {
                 'Content-Type': 'application/json',
@@ -55,6 +71,7 @@ async function attackTo(username, damage) {
                 damage: damage
             }),
         });
+        console.log(response);
         const data = await response.json();
         console.log(data);
         return data;
@@ -71,6 +88,7 @@ let info = {
     money: 0,
     HP: 100
 };
+console.log(myName);
 setInterval(() => {
     getUserInfo(myName).then(userInfo => {
         if (userInfo === info) {

@@ -1,3 +1,4 @@
+// const dbAPI = 'http://127.0.0.1:5000';
 class Player {
     constructor(name, health = 100) {
         this.name = name;
@@ -18,6 +19,34 @@ class Player {
     }
 }
 
+
+async function attackTo(username, damage) {
+    console.log(`Attack to ${username}`);
+    if (username.endsWith('.png') || username.endsWith('.jpg') || username.endsWith('.jpeg') || username.endsWith('.gif')){ // 如果URL是圖片的路徑，則返回null
+        return null;
+    }
+    try {
+        const response = await fetch(dbAPI+'/attack', {
+            method: 'POST', // or 'PUT'
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                name: username,
+                damage: damage
+            }),
+        });
+        console.log(response);
+        const data = await response.json();
+        console.log(data);
+        return data;
+    }
+    catch (error) {
+        console.error(error);
+        return null;
+    }
+}
+
 // 創建一些玩家
 let players = [
     new Player("Ethan"),
@@ -30,23 +59,24 @@ let players = [
 ];
 
 // 以玩家0當作主要玩家，加入一些好友
-players[0].addFriend(players[1]);
-players[0].addFriend(players[4]);
-players[0].addFriend(players[5]);
-
+players[1].addFriend(players[0]);
+players[1].addFriend(players[4]);
+players[1].addFriend(players[5]);
+players[0].health = 10;  // 測試用，將玩家0的血量設為10
 // 當頁面加載時，顯示好友清單
 document.addEventListener('DOMContentLoaded', function() {
-    displayFriends(players[0]);
+    displayFriends(players[1]);
 });
 
 function displayFriends(player) {
     const output = document.getElementById('friend-list');
+    output.innerHTML = '';
     player.friends.forEach((friend, index) => {
+        // alert("更新好友列表");
         output.innerHTML += `
             <p>姓名：${friend.name}</p>
             <p>血量：${friend.health}</p>
             <button onclick="attackFriend(${index}, '${player.name}')">攻擊</button>
-            <button class="btn_attack">測試</button>
             <hr>
         `;
     });
@@ -61,13 +91,16 @@ function attackFriend(index, playerName) {
         displayFriends(player); // 更新好友列表以顯示新的血量
     } else {
         alert(`${friend.name} 已經被擊敗`);
+        attackTo('Bob', 10);//對資料庫進行攻擊
+        // alert(document.querySelector('.player-money').textContent.split('$'))
+        // document.querySelector('.player-money').textContent = parseInt() + 10;
     }
 }
 
-document.querySelector('.btn_attack').addEventListener('click', function() {
-    alert('攻擊成功');
-    displayStrangerDetails();
-});
+// document.querySelector('.btn_attack').addEventListener('click', function() {
+//     alert('攻擊成功');
+// displayStrangerDetails();
+// });
 
 function displayStrangerDetails() {
     const outputSTG = document.getElementById('outputSTG');

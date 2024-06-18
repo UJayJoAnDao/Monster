@@ -1,9 +1,10 @@
-from flask import Flask, request
+from flask import Flask, request, jsonify
 from flask_cors import CORS
 import Database_function as db
 
+
 app = Flask(__name__)
-CORS(app)  # 允许所有域名访问
+CORS(app, resources={r"/user": {"origins": "https://8757-223-138-105-217.ngrok-free.app"}})
 
 @app.route('/user', methods=['GET'])
 def get_user():
@@ -12,7 +13,7 @@ def get_user():
     result = db.User_select(name)
     if result is None:
         return {'message': 'User not found'}, 404
-    return result
+    return jsonify(result)
 
 @app.route('/user', methods=['POST'])
 def update_user():
