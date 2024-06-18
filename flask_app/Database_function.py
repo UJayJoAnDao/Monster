@@ -178,7 +178,7 @@ def account(account):
     friend_data = cursor.fetchone()
 
     if friend_data:
-        print(f"alice_account 和 {friend_data[1]} 有關聯。")
+        print(f"{account} 和 {friend_data[1]} 有關聯。")
     else:
         print("找不到 Friend1 和任何用戶的關聯。")
     # 關閉連接
@@ -199,11 +199,31 @@ def update_Sprites(EXP,user_name, spriteID):
 def update_User(user_name, money, HP):
     conn = sqlite3.connect('MY.db')
     cursor = conn.cursor()
-    cursor.execute('''
-        UPDATE Users SET money = ?, HP = ?
-        WHERE UserName = ?;
-    ''',(money, HP, user_name))
-
+    if money != None and HP != None:# 都有寫money跟HP
+        if money < 0:
+            money = 0
+        elif HP < 0:
+            HP = 0
+        cursor.execute('''
+            UPDATE Users SET money = ?, HP = ?
+            WHERE UserName = ?;
+        ''',(money, HP, user_name))
+    elif money == None and HP == None:#都沒有寫出money、HP
+        pass
+    elif money != None:# 只有寫出money
+        if money < 0:
+            money = 0
+        cursor.execute('''
+            UPDATE Users SET money = ?
+            WHERE UserName = ?;
+        ''',(money, user_name))
+    else:# 只有寫出HP
+        if HP < 0:
+            HP = 0
+        cursor.execute('''
+            UPDATE Users SET HP = ?
+            WHERE UserName = ?;
+        ''',(HP, user_name))
     # 提交變更
     conn.commit()
     # 關閉連接
@@ -217,10 +237,9 @@ if __name__ == '__main__':
 
     # ------ 功能區塊 ------
     # social('Friend1')                                     # 找出社交關係
-    # account('alice_account')                              # 判斷帳號是否存在
+    # account('Alice_account')                              # 判斷帳號是否存在
     # update_Sprites(10,'Alice', 1)                         # 更新使用者擁有的精靈資訊
-    UserSprites_select('Alice')                           # 顯使使用者擁有的精靈資訊
-
-    # update_User('Alice', 0, 100)                          # 更新使用者資訊
+    # UserSprites_select('Alice')                           # 顯使使用者擁有的精靈資訊
+    # update_User('Alice', None, 90)                          # 更新使用者資訊
     # User_select('Alice')                                    # 顯示使用者資訊
-    # pass
+    pass

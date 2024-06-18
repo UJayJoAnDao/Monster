@@ -39,12 +39,56 @@ async function updateUserInfo(username, money, HP) {
     }
 }
 
+async function attackTo(username, damage) {
+    console.log(`Attack to ${username}`);
+    if (username.endsWith('.png') || username.endsWith('.jpg') || username.endsWith('.jpeg') || username.endsWith('.gif')){ // 如果URL是圖片的路徑，則返回null
+        return null;
+    }
+    try {
+        const response = await fetch('http://127.0.0.1:5000/attack', {
+            method: 'POST', // or 'PUT'
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                name: username,
+                damage: damage
+            }),
+        });
+        const data = await response.json();
+        console.log(data);
+        return data;
+    }
+    catch (error) {
+        console.error(error);
+        return null;
+    }
+}
+
 const myName = window.location.pathname.split('/').pop();
 let info = {
     name: '',
     money: 0,
     HP: 100
 };
+setInterval(() => {
+    getUserInfo(myName).then(userInfo => {
+        if (userInfo === info) {
+            console.log('No change')
+            return;
+        }
+        const firstUser = userInfo;
+        console.log(firstUser);
+        info.name = firstUser[0];
+        info.money = firstUser[1];
+        info.HP = firstUser[2];
+        document.querySelector('.player-name').textContent = '玩家名稱: '+info.name;
+        document.querySelector('.player-money').textContent = '資金: $'+info.money;
+        document.querySelector('.player-HP').textContent = '血量: '+info.HP;
+    }).catch(error => {
+        console.error(error);
+    });
+}, 30000);
 getUserInfo(myName).then(userInfo => {
     const firstUser = userInfo;
     console.log(firstUser);
@@ -118,11 +162,11 @@ closeBtns.forEach(btn => {
 // 定義按鈕功能函數
 function feedPet() {
     // 餵食功能的實現
+    updateUserInfo(info.name, info.money-10, info.HP+10);
     info.money -= 10;
     info.HP += 10;
     document.querySelector('.player-money').textContent = '資金: $'+info.money;
     document.querySelector('.player-HP').textContent = '血量: '+info.HP;
-    updateUserInfo(info.name, info.money, info.HP);
     
 }
 
@@ -182,7 +226,9 @@ function showAttackPage() {
     all_pages.forEach(page => {
         page.style.visibility = 'hidden';
     });
-    attack_page.style.visibility = 'visible';
+    // attack_page.style.visibility = 'visible';
+    attackTo('Bob', 10);
+    console.log('攻擊成功');
 }
 
 function showDefendPage() {
@@ -198,6 +244,8 @@ function showCounterPage() {
     });
     counter_page.style.visibility = 'visible';
 }
+
+
 // 定義更多功能函數...
 const pet = document.querySelector('.pet-area > .pet'); // 獲取寵物的元素
 

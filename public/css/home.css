@@ -301,3 +301,9 @@
     z-index: 9999;
     background-image: "images/sprite/background.png"
 }
+
+
+#friend-list {
+    overflow: auto;
+    height: 85%;
+}
