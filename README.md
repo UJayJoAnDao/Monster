@@ -47,11 +47,11 @@
 ├── .gitignore
 ├── package-lock.json
 ├── package.json
+├── My.db
 │
 ├── flask_app/
 │   ├── __pycache__
 │   │   └── Database_function.cpython-311.py
-│   ├── My.db
 │   ├── Database_function.py
 │   ├── Create_Database.py
 │   └── app.py
@@ -74,15 +74,15 @@
 - `package-lock.json`: 記錄當前安裝的 npm 包的確切版本號,以確保可重複的構建。
 - `package.json`: 包含專案的元數據和相依項列表,用於管理 Node.js 專案。
 
-## Flask 部分
+## Python 部分
 
 - `flask_app/`：Flask 應用程式的所有文件和資料夾，在這專案中flask主要負責對資料庫操作的API。
     - `__pycache__/`：這個資料夾包含 Python 編譯的 .pyc 檔案，這些檔案是 Python 在執行時為了提高效能而自動產生的。
         - `Database_function.cpython-311.py`：這是 `Database_function.py` 的編譯版本。
-    - `My.db`：這是 SQLite 數據庫檔案，用於儲存應用程式的數據。
     - `Database_function.py`：這個 Python 檔案包含與數據庫相關的所有函數。
     - `Create_Database.py`：這個 Python 檔案用於創建和初始化數據庫。
     - `app.py`：這是 Flask 應用程式的主要檔案，包含API相關處理與資訊。
+- `My.db`：這是 SQLite 數據庫檔案，用於儲存應用程式的數據。
 
 ## 其他
 
